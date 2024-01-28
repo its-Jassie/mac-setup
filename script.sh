@@ -40,7 +40,7 @@ brew --version
 install_casks firefox discord visual-studio-code
 
 # Install multiple packages
-install_packages git neovim ripgrep bat fish
+install_packages git neovim ripgrep bat fish mas
 
 # Find the Fish shell executable
 FISH_PATH=$(which fish)
