@@ -50,13 +50,23 @@ fi
 brew --version
 
 # Install multiple casks
-install_casks firefox discord visual-studio-code
+install_casks \
+    firefox \
+    discord \
+    visual-studio-code
 
 # Install multiple packages
-install_packages git neovim ripgrep bat fish mas
+install_packages \
+    git \
+    neovim \
+    ripgrep \
+    bat \
+    fish \
+    mas
 
 # Install multiple app store apps (mas)
-install_mas 1498497896
+install_mas \
+    1498497896 # Raivo Receiver
 
 # Find the Fish shell executable
 FISH_PATH=$(which fish)
