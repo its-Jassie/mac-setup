@@ -24,6 +24,19 @@ install_casks() {
     done
 }
 
+# Function to install multiple App Store apps if they're not already installed
+install_mas() {
+    for app_id in "$@"; do
+        app_name=$(mas info $app_id | head -n 1)
+        if mas list | grep -q $app_id; then
+            echo "$app_name is already installed."
+        else
+            echo "Installing $app_name..."
+            mas install $app_id
+        fi
+    done
+}
+
 # Check if Homebrew is installed
 if command -v brew >/dev/null 2>&1; then
     echo "Homebrew is already installed."
@@ -41,6 +54,9 @@ install_casks firefox discord visual-studio-code
 
 # Install multiple packages
 install_packages git neovim ripgrep bat fish mas
+
+# Install multiple app store apps (mas)
+install_mas 
 
 # Find the Fish shell executable
 FISH_PATH=$(which fish)
