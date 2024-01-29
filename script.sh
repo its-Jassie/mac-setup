@@ -76,3 +76,21 @@ else
     sudo chsh -s "$FISH_PATH" $(whoami)
     echo "Fish shell is now set as your default shell."
 fi
+
+# Update Fish shell path with Homebrew bin if not already present
+FISH_CONFIG="$HOME/.config/fish/config.fish"
+BREW_PATH="/opt/homebrew/bin"
+
+# Create config.fish if it doesn't exist
+if [ ! -f "$FISH_CONFIG" ]; then
+    mkdir -p "$(dirname "$FISH_CONFIG")"
+    touch "$FISH_CONFIG"
+fi
+
+# Check if Homebrew path is already in config.fish
+if ! grep -q "$BREW_PATH" "$FISH_CONFIG"; then
+    echo "Adding Homebrew bin to Fish path..."
+    echo "set -g fish_user_paths $BREW_PATH \$fish_user_paths" >> "$FISH_CONFIG"
+else
+    echo "Homebrew bin is already in the Fish path."
+fi
