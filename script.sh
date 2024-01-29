@@ -56,7 +56,7 @@ install_casks firefox discord visual-studio-code
 install_packages git neovim ripgrep bat fish mas
 
 # Install multiple app store apps (mas)
-install_mas 
+install_mas 1498497896
 
 # Find the Fish shell executable
 FISH_PATH=$(which fish)
