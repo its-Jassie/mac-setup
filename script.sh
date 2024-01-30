@@ -53,7 +53,8 @@ brew --version
 install_casks \
     firefox \
     discord \
-    visual-studio-code
+    visual-studio-code \
+    motrix
 
 # Install multiple packages
 install_packages \
