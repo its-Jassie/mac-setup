@@ -53,6 +53,7 @@ brew --version
 install_casks \
     appcleaner \
     firefox \
+    fedora-media-writer \
     discord \
     visual-studio-code \
     motrix
