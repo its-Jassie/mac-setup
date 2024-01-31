@@ -51,6 +51,7 @@ brew --version
 
 # Install multiple casks
 install_casks \
+    appcleaner \
     firefox \
     discord \
     visual-studio-code \
